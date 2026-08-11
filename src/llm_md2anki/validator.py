@@ -31,8 +31,5 @@ def validate_converted_markdown(text: str) -> List[ValidationError]:
         if block.count("{{") != block.count("}}"):
             errors.append(ValidationError("Unbalanced cloze braces", line_offset, line_offset + block.count("\n")))
 
-        if len(block.splitlines()) == 1 and block.startswith("#"):
-            errors.append(ValidationError("Heading-only block", line_offset, line_offset + block.count("\n")))
-
         line_offset += block.count("\n") + 2
     return errors

@@ -1,3 +1,4 @@
 rich
 google-genai
+openai
 pytest
